@@ -6,6 +6,9 @@ import rateLimit from "express-rate-limit";
 
 const app = express();
 
+// Trust proxy - 讓 Express 信任 Render 的反向代理
+app.set('trust proxy', 1);
+
 // Rate limiting - 全域限制（所有人加起來）
 const globalLimiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000, // 24 小時
