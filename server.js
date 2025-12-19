@@ -12,7 +12,7 @@ app.set('trust proxy', 1);
 // Rate limiting - 全域限制（所有人加起來）
 const globalLimiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000, // 24 小時
-  max: 50, // 一天最多 50 次請求
+  max: 100, // 一天最多 100 次請求
   message: {
     success: false,
     error: "今日請求次數已達上限，請明天再試",
